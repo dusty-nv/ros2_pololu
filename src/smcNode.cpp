@@ -18,6 +18,7 @@ class SmcNode : public rclcpp::Node
     SmcNode() : Node("smc")
     {
       mDevice = SmcDevice::Open();
+      mTestSeq = 0;
       
       if( !mDevice )
       {
@@ -28,6 +29,10 @@ class SmcNode : public rclcpp::Node
       mTimer = create_wall_timer(1s,
         std::bind(&SmcNode::ReadState, this)
       );
+      
+      /*create_wall_timer(2s,
+        std::bind(&SmcNode::TestMotor, this)
+      );*/
     }
     
     ~SmcNode()
@@ -45,8 +50,23 @@ class SmcNode : public rclcpp::Node
       mDevice->PrintVariables();
     }
     
+    void TestMotor()
+    {
+      int speed = 800;
+      
+      if( mTestSeq++ % 2 != 0 )
+        speed *= -1;
+        
+      RCLCPP_INFO(get_logger(), "Test sequence:  setting motor to %i", speed);
+      
+      if( !mDevice->SetSpeed(speed) )
+        RCLCPP_ERROR(get_logger(), "Failed to set motor to %i during test sequence", speed);
+    }
+    
     SmcDevice* mDevice;
     rclcpp::TimerBase::SharedPtr mTimer;
+    
+    int mTestSeq;
 };
 
   
