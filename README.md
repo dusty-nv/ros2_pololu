@@ -136,4 +136,8 @@ ros2 topic echo /cmd_vel
 * https://robotics.snowcron.com/robotics_ros2/dif_drive_intro.htm
 * https://robotics.stackexchange.com/questions/105443/configure-diff-drive-controller-in-open-loop-on-a-real-robot
 * https://bunchofcoders.github.io/basic_bocbot/
+
+* https://automaticaddison.com/how-to-use-gps-with-the-robot-localization-package-ros-2/
+* https://automaticaddison.com/calculating-wheel-velocities-for-a-differential-drive-robot/
+* https://automaticaddison.com/calculating-wheel-odometry-for-a-differential-drive-robot/
     
