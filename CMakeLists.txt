@@ -36,9 +36,18 @@ target_include_directories(jrk PUBLIC
 target_compile_features(jrk PUBLIC c_std_99 cxx_std_17)
 ament_target_dependencies(jrk rclcpp std_msgs)
 
-# install targets
+# install C++ nodes
 install(TARGETS maestro smc jrk
   DESTINATION lib/${PROJECT_NAME})
+
+# install Python modules
+#ament_python_install_package(${PROJECT_NAME})
+
+# install Python nodes
+install(PROGRAMS
+  scripts/skid_steer.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 # install the launch directory
 install(DIRECTORY

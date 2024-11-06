@@ -8,15 +8,19 @@
   <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
   <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  
   <depend>std_msgs</depend>
 
   <exec_depend>ros2launch</exec_depend>
   <exec_depend>libusb-1.0</exec_depend>
+  
   <build_export_depend>libusb-1.0-dev</build_export_depend>
   
   <export>

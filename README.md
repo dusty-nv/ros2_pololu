@@ -141,3 +141,6 @@ ros2 topic echo /cmd_vel
 * https://automaticaddison.com/calculating-wheel-velocities-for-a-differential-drive-robot/
 * https://automaticaddison.com/calculating-wheel-odometry-for-a-differential-drive-robot/
     
+* https://roboticsbackend.com/ros2-nav2-tutorial/
+* https://roboticsbackend.com/ros2-package-for-both-python-and-cpp-nodes/
+
